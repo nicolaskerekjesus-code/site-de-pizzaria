@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Pânico - Cardápio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        /* Estilo das Abas de Navegação */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #2d3436;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .tab-btn:hover {
+            background-color: #e17055;
+        }
+
+        .tab-btn.active {
+            background-color: #d63031;
+            border-bottom: 4px solid #ffeaa7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Conteúdo das Abas */
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #d63031;
+            border-bottom: 2px solid #ff7675;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 15px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-info h3 {
+            font-size: 1.2rem;
+            color: #2d3436;
+        }
+
+        .item-info p {
+            font-size: 0.95rem;
+            color: #636e72;
+        }
+
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e17055;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
+        /* Estilo da aba História */
+        .history-content p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #4b6584;
+            line-height: 1.7;
+        }
+
+        /* Estilo da aba Contato */
+        .contact-info {
+            font-size: 1.1rem;
+            color: #2d3436;
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebd59;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2d3436;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pizza & Pânico</h1>
+        <p>As melhores pizzas artesanais da cidade feitas no forno a lenha!</p>
+    </header>
+
+    <!-- Barra de Navegação por Abas -->
+    <nav class="tabs-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'cardapio')">Cardápio (Pizzas)</button>
+        <button class="tab-btn" onclick="openTab(event, 'bebidas')">Bebidas</button>
+        <button class="tab-btn" onclick="openTab(event, 'historia')">Nossa História</button>
+        <button class="tab-btn" onclick="openTab(event, 'contato')">Contato</button>
+    </nav>
+
+    <div class="container">
+        
+        <!-- ABA 1: CARDÁPIO (PIZZAS) -->
+        <div id="cardapio" class="tab-content active">
+            <h2>Nossas Pizzas</h2>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Margherita</h3>
+                    <p>Molho de tomate artesanal, muçarela de búfala, manjericão fresco e azeite.</p>
+                </div>
+                <div class="item-price">R$ 49,90</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Calabresa</h3>
+                    <p>Molho de tomate, muçarela, fatias de calabresa defumada e cebola roxa.</p>
+                </div>
+                <div class="item-price">R$ 45,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Quatro Queijos</h3>
+                    <p>Molho de tomate, muçarela, provolone, gorgonzola e parmesão gratinado.</p>
+                </div>
+                <div class="item-price">R$ 56,90</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Frango com Catupiry</h3>
+                    <p>Frango desfiado temperado, milho verde e generosas camadas de Catupiry original.</p>
+                </div>
+                <div class="item-price">R$ 52,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza de Chocolate com Morango (Doce)</h3>
+                    <p>Creme de chocolate meio amargo coberto com morangos frescos picados.</p>
+                </div>
+                <div class="item-price">R$ 48,00</div>
+            </div>
+        </div>
+
+        <!-- ABA 2: BEBIDAS -->
+        <div id="bebidas" class="tab-content">
+            <h2>Nossas Bebidas</h2>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante 2 Litros</h3>
+                    <p>Coca-Cola, Guaraná Antarctica ou Sprite.</p>
+                </div>
+                <div class="item-price">R$ 12,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante Lata (350ml)</h3>
+                    <p>Coca-Cola, Guaraná ou Fanta Laranja.</p>
+                </div>
+                <div class="item-price">R$ 6,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Suco Natural de Laranja (1L)</h3>
+                    <p>Feito na hora com frutas frescas da estação.</p>
+                </div>
+                <div class="item-price">R$ 14,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Água Mineral (com ou sem gás)</h3>
+                    <p>Garrafa de 500ml.</p>
+                </div>
+                <div class="item-price">R$ 5,00</div>
+            </div>
+        </div>
+
+        <!-- ABA 3: HISTÓRIA -->
+        <div id="historia" class="tab-content">
+            <h2>A História da Pizza & Pânico</h2>
+            <div class="history-content">
+                <p>Tudo começou em uma noite caótica de sexta-feira, quando um grupo de amigos famintos percebeu que a fome extrema era o verdadeiro estado de pânico universal. Entre fatias queimadas e entregas atrasadas, nasceu a ideia: por que não transformar o desespero da fome em pura arte gastronômica?</p>
+                <p>A <strong>Pizza & Pânico</strong> foi criada com uma premissa simples: salvar o seu estômago antes que o pânico tome conta de vez. Nossas massas são abertas à mão com a velocidade da luz e assadas em um forno a lenha super potente, garantindo crocância e sabor inigualáveis.</p>
+                <p>Aqui, o único pânico permitido é o medo de a última fatia acabar antes de você repetir!</p>
+            </div>
+        </div>
+
+        <!-- ABA 4: CONTATO -->
+        <div id="contato" class="tab-content">
+            <h2>Fale Conosco & Localização</h2>
+            <div class="contact-info">
+                <p>📍 <strong>Endereço:</strong> Av. Principal, 1000 - Centro</p>
+                <p>⏰ <strong>Horário de Funcionamento:</strong> Terça a Domingo, das 18h às 23h30</p>
+                <p>☎️ <strong>Telefone Fixo:</strong> (42) 4002-8922</p>
+                <p>📱 <strong>WhatsApp para Pedidos:</strong> (42) 4002-8922</p>
+                
+                <a href="https://wa.me/554240028922" target="_blank" class="whatsapp-btn">Fazer Pedido via WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pizza & Pânico. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript para controlar a troca de abas -->
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabContent, tabBtns;
+
+            // Esconde todo o conteúdo das abas
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove a classe 'active' de todos os botões
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            // Mostra a aba atual e adiciona a classe 'active' ao botão clicado
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
