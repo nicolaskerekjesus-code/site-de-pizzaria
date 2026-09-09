@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Pânico - Cardápio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .menu-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #d63031;
+            border-bottom: 2px solid #ff7675;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 15px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-info h3 {
+            font-size: 1.2rem;
+            color: #2d3436;
+        }
+
+        .item-info p {
+            font-size: 0.95rem;
+            color: #636e72;
+        }
+
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e17055;
+            white-space: nowrap;
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2d3436;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pizza & Pânico</h1>
+        <p>As melhores pizzas artesanais da cidade feitas no forno a lenha!</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- CARDÁPIO DE PIZZAS -->
+        <div class="menu-section">
+            <h2>Nossas Pizzas</h2>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Margherita</h3>
+                    <p>Molho de tomate artesanal, muçarela de búfala, manjericão fresco e azeite.</p>
+                </div>
+                <div class="item-price">R$ 49,90</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Calabresa</h3>
+                    <p>Molho de tomate, muçarela, fatias de calabresa defumada e cebola roxa.</p>
+                </div>
+                <div class="item-price">R$ 45,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Quatro Queijos</h3>
+                    <p>Molho de tomate, muçarela, provolone, gorgonzola e parmesão gratinado.</p>
+                </div>
+                <div class="item-price">R$ 56,90</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Frango com Catupiry</h3>
+                    <p>Frango desfiado temperado, milho verde e generosas camadas de Catupiry original.</p>
+                </div>
+                <div class="item-price">R$ 52,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza de Chocolate com Morango (Doce)</h3>
+                    <p>Creme de chocolate meio amargo coberto com morangos frescos picados.</p>
+                </div>
+                <div class="item-price">R$ 48,00</div>
+            </div>
+        </div>
+
+        <!-- BEBIDAS -->
+        <div class="menu-section">
+            <h2>Nossas Bebidas</h2>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante 2 Litros</h3>
+                    <p>Coca-Cola, Guaraná Antarctica ou Sprite.</p>
+                </div>
+                <div class="item-price">R$ 12,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante Lata (350ml)</h3>
+                    <p>Coca-Cola, Guaraná ou Fanta Laranja.</p>
+                </div>
+                <div class="item-price">R$ 6,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Suco Natural de Laranja (1L)</h3>
+                    <p>Feito na hora com frutas frescas da estação.</p>
+                </div>
+                <div class="item-price">R$ 14,00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <h3>Água Mineral (com ou sem gás)</h3>
+                    <p>Garrafa de 500ml.</p>
+                </div>
+                <div class="item-price">R$ 5,00</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pizza & Pânico. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
