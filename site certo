@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Pânico — Feita em Casa com Amor</title>
+    <style>
+        /* Estilos com paleta calorosa e acolhedora */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf6f0;
+            color: #2c2c2c;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background:  url('1.png');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            width: 2500px;
+            height: 650px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 15px auto;
+            color: #f1f1f1;
+        }
+
+        header .badge {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-note {
+            background-color: #ffffff;
+            border-left: 4px solid #e63946;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .intro-note p {
+            color: #555;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .menu-section {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            color: #1d3557;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-info {
+            padding-right: 15px;
+        }
+
+        .item-info h3 {
+            font-size: 1.15rem;
+            color: #2b2d42;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background-color: #ffe3e3;
+            color: #d63031;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .item-info p {
+            font-size: 0.92rem;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #e63946;
+            white-space: nowrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1d3557;
+            color: #f1f1f1;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        footer .heart {
+            color: #e63946;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+       
+        
+    </header>
+
+    <div class="container">
+        
+        <div class="intro-note">
+            <p> <strong>Seja bem-vindo à nossa casa!</strong> Preparamos tudo diariamente com ingredientes selecionados de pequenos produtores locais. Se tiver alguma restrição alimentar ou quiser adaptar algum pedido, é só avisar a gente!</p>
+        </div>
+
+        <!-- PIZZAS -->
+        <main class="menu-section">
+            <h2>Pizzas Artesanais</h2>
+            <p class="section-desc">Massa leve que descansa por 48 horas antes de ir ao forno.</p>
+            
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Margherita <span class="tag">Favorita da Casa</span></h3>
+                    <p>Molho de tomate caseiro, muçarela de búfala derretida, folhas de manjericão colhidas na hora e um fio de azeite extra virgem.</p>
+                </div>
+                <div class="item-price">R$ 49,90</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Calabresa</h3>
+                    <p>Massa crocante com molho de tomate, muçarela, fatias fininhas de calabresa artesanal defumada e cebola roxa bem macia.</p>
+                </div>
+                <div class="item-price">R$ 45,00</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Quatro Queijos</h3>
+                    <p>A combinação perfeita de muçarela, provolone defumado, gorgonzola marcante e finalizada com parmesão gratinado.</p>
+                </div>
+                <div class="item-price">R$ 56,90</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Pizza Frango com Catupiry</h3>
+                    <p>Frango desfiado e bem temperadinho, milho verde fresco e a generosa camada de Catupiry original que todo mundo ama.</p>
+                </div>
+                <div class="item-price">R$ 52,00</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Chocolate com Morango <span class="tag">Sobremesa</span></h3>
+                    <p>Para fechar com chave de ouro: creme de chocolate meio amargo cremoso coberto com morangos frescos picados.</p>
+                </div>
+                <div class="item-price">R$ 48,00</div>
+            </article>
+        </main>
+
+        <!-- BEBIDAS -->
+        <section class="menu-section">
+            <h2>Para Acompanhar</h2>
+            <p class="section-desc">Bebidas geladinhas para harmonizar com seu pedido.</p>
+            
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Suco Natural de Laranja (1L) <span class="tag">Fresco</span></h3>
+                    <p>Espremido na hora com laranjas selecionadas da estação. Sem adição de água ou conservantes.</p>
+                </div>
+                <div class="item-price">R$ 14,00</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante 2 Litros</h3>
+                    <p>Ideal para dividir com a família. Opções: Coca-Cola, Guaraná Antarctica ou Sprite.</p>
+                </div>
+                <div class="item-price">R$ 12,00</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Refrigerante Lata (350ml)</h3>
+                    <p>Sua bebida individual bem gelada. Opções: Coca-Cola, Guaraná ou Fanta Laranja.</p>
+                </div>
+                <div class="item-price">R$ 6,00</div>
+            </article>
+
+            <article class="menu-item">
+                <div class="item-info">
+                    <h3>Água Mineral (500ml)</h3>
+                    <p>Disponível na versão com ou sem gás.</p>
+                </div>
+                <div class="item-price">R$ 5,00</div>
+            </article>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Feito com <span class="heart">♥</span> pela equipe Pizza & Pânico</p>
+        <p>&copy; 2026 Pizza & Pânico • Bom apetite!</p>
+    </footer>
+
+</body>
+</html>
