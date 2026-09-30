@@ -180,25 +180,9 @@
             background-color: #d63031;
         }
 
-        /* Estilo do Mapa */
-        .map-container {
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Estilos do Formulário de Login */
-        .login-box {
-            max-width: 400px;
+        /* Estilos do Formulário de Contato e Login */
+        .contact-box, .login-box {
+            max-width: 500px;
             margin: 0 auto;
         }
 
@@ -211,20 +195,30 @@
             font-weight: bold;
             margin-bottom: 8px;
             color: #2d3436;
+            font-size: 0.95rem;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px 14px;
+            border: 1.5px solid #dcdcdc;
+            border-radius: 8px;
             font-size: 1rem;
+            color: #333;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
         }
 
-        .form-group input:focus {
-            outline: none;
+        .form-group input:focus,
+        .form-group textarea:focus {
             border-color: #d63031;
-            box-shadow: 0 0 5px rgba(214, 48, 49, 0.3);
+            box-shadow: 0 0 0 4px rgba(214, 48, 49, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         .submit-btn {
@@ -232,16 +226,20 @@
             background-color: #d63031;
             color: white;
             border: none;
-            padding: 12px;
-            font-size: 1.1rem;
+            padding: 14px;
+            font-size: 1rem;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background-color 0.3s, transform 0.1s;
         }
 
         .submit-btn:hover {
             background-color: #e17055;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
         }
 
         .login-footer {
@@ -388,21 +386,48 @@
                 <p>🏙️ <strong>Ponto de Referência:</strong> Ao lado da Praça Central, em frente ao Banco do Brasil.</p>
                 <p>⏰ <strong>Horário de Atendimento no Balcão:</strong> Terça a Domingo, das 18h às 23h30</p>
                 <p>🚗 <strong>Estacionamento:</strong> Gratuito e exclusivo para clientes no local.</p>
-
-                
-                <!-- Container para mapa incorporado do Google Maps -->
             </div>
         </div>
 
-        <!-- ABA 5: CONTATO -->
+        <!-- ABA 5: CONTATO (Substituída pelo Formulário Estilizado) -->
         <div id="contato" class="tab-content">
-            <h2>Fale Conosco</h2>
-            <div class="info-card">
-                <p>☎️ <strong>Telefone Fixo:</strong> (42) 4002-8922</p>
-                <p>📱 <strong>WhatsApp para Pedidos:</strong> (42) 4002-8922</p>
-                <p>✉️ <strong>E-mail:</strong> contato@pizzapanico.com.br</p>
-                
-                <a href="https://wa.me/554240028922" target="_blank" class="whatsapp-btn">Fazer Pedido via WhatsApp</a>
+            <h2>Entre em contato</h2>
+            <div class="contact-box">
+                <form action="enviar.php" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            placeholder="Digite seu nome completo" 
+                            autocomplete="name" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-contato">E-mail:</label>
+                        <input 
+                            type="email" 
+                            id="email-contato" 
+                            name="email" 
+                            placeholder="seuemail@exemplo.com" 
+                            autocomplete="email" 
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea 
+                            id="mensagem" 
+                            name="mensagem" 
+                            rows="4" 
+                            placeholder="Escreva sua mensagem aqui..." 
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
             </div>
         </div>
 
@@ -437,24 +462,21 @@
         <p>&copy; 2026 Pizza & Pânico. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script JavaScript para controlar a troca de abas e o formulário -->
+    <!-- Script JavaScript -->
     <script>
         function openTab(evt, tabName) {
             let i, tabContent, tabBtns;
 
-            // Esconde todo o conteúdo das abas
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
                 tabContent[i].classList.remove("active");
             }
 
-            // Remove a classe 'active' de todos os botões
             tabBtns = document.getElementsByClassName("tab-btn");
             for (i = 0; i < tabBtns.length; i++) {
                 tabBtns[i].classList.remove("active");
             }
 
-            // Mostra a aba atual e adiciona a classe 'active' ao botão clicado
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
